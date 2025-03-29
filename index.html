@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Table Widget Test</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: sans-serif;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }   
+    th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Custom Table Widget (Local Test)</h2>
+  <custom-table id="myTable"></custom-table>
+
+  <script type="module" src="./customTable.js"></script>
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const widget = document.getElementById("myTable");
+
+    const sampleData = [
+      { Name: "Alice", Age: 23, Role: "Developer" },
+      { Name: "Bob", Age: 30, Role: "Designer" },
+      { Name: "Charlie", Age: 28, Role: "Manager" }
+    ];
+
+    widget.renderTable(sampleData);
+  });
+  </script>
+</body>
+</html>
